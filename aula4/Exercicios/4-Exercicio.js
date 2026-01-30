@@ -1,51 +1,73 @@
 const leia = require("readline-sync");
 
-let idade;
-let genero;
-let area;
-let continuar = "S";
+let idade, genero, categoria;
 
 let backend = 0;
 let mulheresFrontend = 0;
 let homensMobile40 = 0;
-let naoBinariosFull30 = 0;
+let naoBinarioFullstack30 = 0;
 
 let totalPessoas = 0;
 let somaIdades = 0;
 
-while (continuar.toUpperCase() === "S") {
+let continua = true;
 
-  idade = leia.questionInt("Idade: ");
-  genero = leia.questionInt("Identidade de Genero: ");
-  area = leia.questionInt("Pessoa Desenvolvedora: ");
+while (continua) {
 
+  idade = leia.questionInt("Digite a idade: ");
+
+  let genOpt = [
+    "Mulher Cis",
+    "Homem Cis",
+    "Não Binário",
+    "Mulher Trans",
+    "Homem Trans",
+    "Outros"
+  ];
+
+  genero = leia.keyInSelect(genOpt, "Selecione o genero:", { cancel: false }) + 1;
+
+  let categoriaOpt = [
+    "Backend",
+    "Frontend",
+    "Mobile",
+    "Fullstack"
+  ];
+
+  categoria = leia.keyInSelect(categoriaOpt, "Selecione a categoria:", { cancel: false }) + 1;
+
+  // Contagem geral
   totalPessoas++;
   somaIdades += idade;
 
-  if (area === 1) {
+  // Back
+  if (categoria === 1) {
     backend++;
   }
 
-  if ((genero === 1 || genero === 4) && area === 2) {
+  // Mulheres Cis (1) ou Trans (4) Frontend
+  if ((genero === 1 || genero === 4) && categoria === 2) {
     mulheresFrontend++;
   }
 
-  if ((genero === 2 || genero === 5) && area === 3 && idade > 40) {
+  // Homens Cis (2) ou Trans (5) Mobile maiores de 40
+  if ((genero === 2 || genero === 5) && categoria === 3 && idade > 40) {
     homensMobile40++;
   }
 
-  if (genero === 3 && area === 4 && idade < 30) {
-    naoBinariosFull30++;
+  // Não Binário Fullstack menores de 30
+  if (genero === 3 && categoria === 4 && idade < 30) {
+    naoBinarioFullstack30++;
   }
 
-  continuar = leia.question("Deseja continuar (S/N): ");
+  continua = leia.keyInYN("Deseja continuar? ");
 }
 
-let media = somaIdades / totalPessoas;
+let mediaIdade = somaIdades / totalPessoas;
 
-console.log("\nTotal de pessoas desenvolvedoras Backend: " + backend);
-console.log("Total de Mulheres Cis e Trans desenvolvedoras Frontend: " + mulheresFrontend);
-console.log("Total de Homens Cis e Trans desenvolvedores Mobile maiores de 40 anos: " + homensMobile40);
-console.log("Total de Pessoas Não Binárias desenvolvedoras FullStack menores de 30 anos: " + naoBinariosFull30);
-console.log("O número total de pessoas que responderam à pesquisa: " + totalPessoas);
-console.log("A média de idade das pessoas que responderam à pesquisa: " + media.toFixed(2));
+console.log("\nTotal de pessoas desenvolvedoras Backend:", backend);
+console.log("Total de Mulheres Cis e Trans Frontend:", mulheresFrontend);
+console.log("Total de Homens Cis e Trans Mobile maiores de 40:", homensMobile40);
+console.log("Total de Não Binários Fullstack menores de 30:", naoBinarioFullstack30);
+console.log("Total de pessoas que responderam:", totalPessoas);
+console.log("Média de idade:", mediaIdade.toFixed(2));
