@@ -9,13 +9,13 @@
 <br />
 
 <div align="center">
-  <img src="https://img.shields.io/github/languages/top/imayagmb/javascript_tjs13?style=flat-square" />
-  <img src="https://img.shields.io/github/repo-size/imayagmb/javascript_tjs13?style=flat-square" />
-  <img src="https://img.shields.io/github/languages/count/imayagmb/javascript_tjs13?style=flat-square" />
-  <img src="https://img.shields.io/github/last-commit/imayagmb/javascript_tjs13?style=flat-square" />
+  <img src="https://img.shields.io/github/languages/top/imayagmb/JavaScript13-Generation?style=flat-square" />
+  <img src="https://img.shields.io/github/repo-size/imayagmb/JavaScript13-Generation?style=flat-square" />
+  <img src="https://img.shields.io/github/languages/count/imayagmb/JavaScript13-Generation?style=flat-square" />
+  <img src="https://img.shields.io/github/last-commit/imayagmb/JavaScript13-Generation?style=flat-square" />
     <br />
-  <img src="https://img.shields.io/github/issues/imayagmb/javascript_tjs13?style=flat-square" />
-  <img src="https://img.shields.io/github/issues-pr/imayagmb/javascript_tjs13?style=flat-square" />
+  <img src="https://img.shields.io/github/issues/imayagmb/JavaScript13-Generation?style=flat-square" />
+  <img src="https://img.shields.io/github/issues-pr/imayagmb/JavaScript13-Generation?style=flat-square" />
      <img src="https://img.shields.io/badge/bootcamp-Generation Brasil-orange?style=flat-square)"/>
 
 </div>
